@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import Navbar from "./components/Navbar/Navbar";
+import Images from "./components/Image";
+import FlightSearch from "./components/Flights/FlightSearch";
+import { CiCircleInfo } from "react-icons/ci";
+import Button from "./components/other/Button";
+import DarkMap from "./components/other/DarkMap";
+import Destination from "./components/other/Destinations";
+import FlightTools from "./components/Flights/FlightTools";
+import DestinationSlider from "./components/other/DestinationSlider";
 
 function App() {
-  const [count, setCount] = useState(0)
+    return (
+        <div className="bg-[#202124]">
+            <Navbar />
+            {/* Your page content */}
+            <main className="lg:px-52 text-gray-300 bg-[#202124] px-3">
+                <div className="flex justify-center">
+                    <Images />
+                </div>
+                <div className="">
+                    <FlightSearch />
+                </div>
+                <div className="mt-5 flex items-center gap-3 w-full">
+                    <p className="font-semibold text-xl flex items-center gap-1">
+                        Find cheap flights from Kochi to anywhere
+                        <CiCircleInfo className="text-xl flex-shrink-0" />
+                    </p>
+                </div>
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+                <div className="flex gap-2 mt-4 overflow-x-auto whitespace-nowrap flex-nowrap">
+                    <Button text="Kochi" />
+                    <Button text="Kozhikode" />
+                    <Button text="Coimbatore" />
+                    <Button text="Thiruvananthapuram" />
+                </div>
+
+                <div className="mb-4">
+                    <DarkMap />
+                </div>
+                <div>
+                  <Destination/>
+                  
+                  <FlightTools/>
+
+                  <DestinationSlider/>
+                </div>
+            </main>
+        </div>
+    );
 }
 
-export default App
+export default App;

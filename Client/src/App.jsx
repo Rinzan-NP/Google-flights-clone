@@ -8,6 +8,8 @@ import DarkMap from "./components/other/DarkMap";
 import Destination from "./components/other/Destinations";
 import FlightTools from "./components/Flights/FlightTools";
 import DestinationSlider from "./components/other/DestinationSlider";
+import Accordion from "./components/other/Accordian";
+import Footer from "./components/other/Footer";
 
 function App() {
     return (
@@ -39,11 +41,15 @@ function App() {
                     <DarkMap />
                 </div>
                 <div>
-                  <Destination/>
-                  
-                  <FlightTools/>
+                    <Destination />
 
-                  <DestinationSlider/>
+                    <FlightTools />
+
+                    <DestinationSlider />
+
+                    <Accordion />
+
+                    <Footer/>
                 </div>
             </main>
         </div>
